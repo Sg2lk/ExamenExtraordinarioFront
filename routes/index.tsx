@@ -1,23 +1,30 @@
-/*
-export default function Home() {
-  return (
-    <>
-    Hey buenas a todos!
-    </>
-  );
-}
-*/
+import Search from "../islands/Search.tsx";
 
-import { Handlers } from "$fresh/server.ts";
-
-export const handler:Handlers = {
-  GET: (_req,c) => {
-    return c.render();
+export type Personaje = {
+  id: string,
+  name: string,
+  image: string,
+  status: string,
+  species: string,
+  gender: string,
+  origin: {
+    name: string,
   }
+  location: {
+    name: string,
+  }
+}
+
+export type RespuestaAPI = {
+  info: {
+    pages: string,
+    next: string,
+  }
+  results: Personaje[],
 }
 
 export default function Page(){
   return(
-    <>Page</>
+    <Search/>
   )
 }
