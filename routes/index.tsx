@@ -11,7 +11,7 @@ export default function Home() {
 import { Handlers } from "$fresh/server.ts";
 
 export const handler:Handlers = {
-  GET: (req,c) => {
+  GET: (_req,c) => {
     return c.render();
   }
 }
